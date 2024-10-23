@@ -1,57 +1,67 @@
-# Human-Like Typing Simulation in Python
 
-This Python script simulates human-like typing behavior by introducing randomness, mistakes, fatigue, and other natural typing behaviors. The simulation can be used to automate typing in any document (like Google Docs) while mimicking real human typing patterns.
+# Human Typing with GUI Simulation
+
+This project simulates human typing with fatigue, introduces random typos, and slows typing speed over time. 
+It includes a graphical user interface (GUI) built using `tkinter` and uses `pyautogui` to interact with the system.
 
 ## Features
+- Simulates typing speed changes due to fatigue.
+- Introduces random typos.
+- Allows setting of typing speed, chance of typos, and other custom parameters.
 
-- **Typing Fatigue**: Gradual slowing of typing speed over time to mimic fatigue.
-- **Random Typos**: Introduces typos, some of which are corrected, while others are left uncorrected.
-- **Capitalization Errors**: Occasionally makes random capitalization mistakes, some of which are fixed.
-- **Word Repetition**: Simulates typing a word twice by mistake and then correcting it.
-- **Word Substitution**: Randomly substitutes words with similar ones to simulate rethinking.
-- **Pauses**: Varying pauses between words and sentences, with longer pauses after punctuation and occasional "thinking" pauses.
-- **Dynamic User Input**: After the first block of text, users can input new text to continue typing.
+## Prerequisites
+
+Make sure you have Python installed (version 3.6 or later).
+
+You also need to install the following Python libraries:
+
+```bash
+pip install pyautogui
+pip install tkinter
+```
 
 ## Installation
 
-### Prerequisites
+1. Clone the repository from GitHub:
 
-- Python 3.x
-- `pyautogui` library
+```bash
+git clone https://github.com/your-username/your-repo.git
+cd your-repo
+```
 
-### Installation Steps
+2. Install the required dependencies:
 
-1. Clone the repository:
-    ```bash
-    git clone https://github.com/<your-username>/human-typing-simulation.git
-    ```
+```bash
+pip install -r requirements.txt
+```
 
-2. Navigate into the project directory:
-    ```bash
-    cd human-typing-simulation
-    ```
-
-3. Install the required dependencies:
-    ```bash
-    pip install -r requirements.txt
-    ```
+> Note: Make sure to add `pyautogui` and `tkinter` to your `requirements.txt`.
 
 ## Usage
 
-1. Run the script:
-    ```bash
-    python human_typing.py
-    ```
+1. Run the Python script:
 
-2. The script will give you 5 seconds to focus the cursor on the document where you want the text to be typed.
-   
-3. The script will begin typing the predefined text.
+```bash
+python human_typing_with_gui.py
+```
 
-4. After the initial text is typed, you'll be prompted to input new text to simulate typing dynamically. You can keep inputting new text, or type `exit` to quit the simulation.
+2. The GUI will open, allowing you to adjust parameters like:
+   - Typing speed
+   - Typo frequency
+   - Pause duration
+
+3. Watch as the simulated typing takes place with the settings you have chosen.
 
 ## Customization
 
-- **Typing Speed**: Adjust the `base_typing_speed` variable to control the average typing speed.
-- **Typos**: Adjust `typo_chance` and `leave_misspelled_chance` to control the frequency of typos and how often they are left uncorrected.
-- **Capitalization Errors**: Control capitalization mistake frequency by adjusting `cap_error_chance`.
-- **Substitution
+You can modify the script to adjust:
+- Base typing speed
+- Typo chance
+- Fatigue factor
+- Thinking pause
+
+These parameters are available in the `simulate_typing` function inside the script.
+
+## License
+
+This project is licensed under the MIT License.
